@@ -30,8 +30,12 @@
                         </ul>
                         <ul class="navbar-nav ml-auto">
                             @guest
-                                <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+                                <li><a class="nav-link" href="{{ action('NewsController@index') }}" method="get" style="color:black">{{ __('messages.News') }}</a></li>
+                                <li><a class="nav-link" href="{{ action('ProfileController@index') }}" method="get" style="color:black">{{ __('messages.Profile') }}</a></li>
+                                <li><a class="nav-link" href="{{ route('login') }}" style="color:black">{{ __('messages.Login') }}</a></li>
                             @else
+                                <li><a class="nav-link" href="{{ action('Admin\NewsController@index') }}" method="get">{{ __('messages.News') }}</a></li>
+                                <li><a class="nav-link" href="{{ action('Admin\ProfileController@index') }}" method="get">{{ __('messages.Profile') }}</a></li>
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->name }} <span class="caret"></span>
@@ -39,7 +43,7 @@
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
+                                            {{ __('messages.Logout') }}
                                         </a>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             @csrf

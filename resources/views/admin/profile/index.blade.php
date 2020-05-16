@@ -28,7 +28,7 @@
         <div class="row">
             <div class="list-news col-md-12 mx-auto">
                 <div class="row">
-                    <table class="table table-dark">
+                    <table class="table table-dark" >
                         <thead>
                             <tr>
                                 <th width="10%">ID</th>
@@ -44,8 +44,16 @@
                                     <th>{{ $profiles->id }}</th>
                                     <td>{{ \Str::limit($profiles->name, 40) }}</td>
                                     <td>{{ $profiles->gender }}</td>
-                                    <td>{{ \Str::limit($profiles->hobby, 100) }}</td>
-                                    <td>{{ \Str::limit($profiles->introduction, 200) }}</td>
+                                    <td>
+                                        <div style="word-wrap:break-word;width:200px">
+                                            {{ \Str::limit($profiles->hobby, 100) }}
+                                        </div>    
+                                    </td>
+                                    <td>
+                                        <div style="word-wrap:break-word;width:500px">
+                                            {{ \Str::limit($profiles->introduction, 200) }}
+                                        </div>
+                                    </td>
                                     <td>
                                         <div style="width:30px">
                                             <a href="{{ action('Admin\ProfileController@edit', ['id' => $profiles->id]) }}">編集</a>
