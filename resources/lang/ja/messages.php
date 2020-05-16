@@ -8,5 +8,7 @@ return [
     'News' => 'ニュース',
     'Profile' => 'プロフィール',
     'Logout' => 'ログアウト',
-    'Register' => '登録'
+    'Register' => '登録',
+    'Name' => '氏名',
+    'Confirm Password' => 'パスワード確認',
 ];
